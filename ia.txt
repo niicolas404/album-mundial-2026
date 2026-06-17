@@ -5,9 +5,12 @@ utilidad: cumple con la tarea.
 
 
 === Etapa 2 ===
-prompt:
-resultado:
-utilidad:
+prompt:okay, sigamos con #file:StickerCard.jsx. Necesito que el componente reciba los siguientes props: number, name, group, status. Muestra la información de la ffigurita de forma visual (número, nombre, grupo)
+También aplica estilos básicos según el estatus: fondo verde para "tengo", amarillo para "repetida", gris para "falta" (puedes usar estilos en línea o CSS)
+
+por último, en #file:App.jsx, renderiza al menos 5 figuritas usando el componente, pasando los datos desde el array impórtado.
+resultado: se muestran correctamente las tarjetas color verde(tengo), amarillo (repetida) y falta (gris). 
+utilidad: se renderizan al menos 5 tarjetas con sus erspectivos estatus e información.
 
 
 === Etapa 3 ===
