@@ -1,0 +1,29 @@
+=== Etapa 1 ===
+prompt:necesito que modifiques #file:App.jsx para solo importar y mostrar en la consola el array de figuritas que guardé en #file:stickers.js (console.log)
+resultado:se importaron console.log(siteckers) dentro de componente y retorna null para que no muestre algun contenido adicional
+utilidad: cumple con la tarea.
+
+
+=== Etapa 2 ===
+prompt:
+resultado:
+utilidad:
+
+
+=== Etapa 3 ===
+prompt:
+resultado:
+utilidad:
+
+
+=== Etapa 4 ===
+prompt:
+resultado:
+utilidad:
+
+
+=== Etapa 5 ===
+prompt:
+resultado:
+utilidad:
+
