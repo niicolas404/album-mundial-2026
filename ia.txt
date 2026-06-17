@@ -14,9 +14,23 @@ utilidad: se renderizan al menos 5 tarjetas con sus erspectivos estatus e inform
 
 
 === Etapa 3 ===
-prompt:
-resultado:
-utilidad:
+prompt:hora pasemos a hacer que el usuario pueda cambiar el estado de cada figurita de forma interactiva.
+
+1. en #file:App.jsx , usa useState para manejar un objeto de estados: { [id]: "falta" | "tengo" | "repetida" }
+
+2.
+Inicializa el estado con todas las figuritas en "falta"
+
+3.
+Crea una función handleStatusChange(id) que alterne el estado de una figurita en el orden: falta → tengo → repetida → falta
+
+4.
+Pasa la función como prop a StickerCard y ejecútala al hacer click en la tarjeta
+
+5.
+El componente debe mostrar visualmente el estado actual (el estilo debe cambiar al hacer click)
+resultado:Importa useState de react. Ahora todas las figuritas inician en "falta" es decir de color gris y se puede cambiar el estado y a la vez el color haciendo click sobre la tarjeta
+utilidad: ha servido para comenzar a crear la interacción de usuario
 
 
 === Etapa 4 ===

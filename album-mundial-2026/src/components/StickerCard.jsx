@@ -1,4 +1,4 @@
-function StickerCard({ number, name, group, status }) {
+function StickerCard({ id, number, name, group, status, onStatusChange }) {
   const statusStyles = {
     tengo: { backgroundColor: '#d4f5d4', borderColor: '#6bb76b' },
     repetida: { backgroundColor: '#fff4c2', borderColor: '#d1b800' },
@@ -6,14 +6,19 @@ function StickerCard({ number, name, group, status }) {
   }
 
   return (
-    <article className="sticker-card" style={{
-      padding: '1rem',
-      border: '1px solid',
-      borderRadius: '12px',
-      width: '200px',
-      margin: '0.5rem',
-      ...statusStyles[status],
-    }}>
+    <article 
+      className="sticker-card" 
+      onClick={() => onStatusChange(id)}
+      style={{
+        padding: '1rem',
+        border: '2px solid',
+        borderRadius: '12px',
+        width: '200px',
+        margin: '0.5rem',
+        cursor: 'pointer',
+        transition: 'all 0.3s ease',
+        ...statusStyles[status],
+      }}>
       <div style={{ fontSize: '0.9rem', fontWeight: '700', marginBottom: '0.5rem' }}>
         #{number}
       </div>
