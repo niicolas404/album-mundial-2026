@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { stickers } from './data/stickers'
+import AlbumSummary from './components/AlbumSummary'
 import StickerCard from './components/StickerCard'
 import './App.css'
 
@@ -8,14 +9,40 @@ function App() {
 
   const sampleStickers = stickers.slice(0, 5)
   
-  // Inicializar todos los estados en "falta"
+  // Inicializar el estado usando localStorage si existe
   const [stickerStatus, setStickerStatus] = useState(() => {
     const initialState = {}
     sampleStickers.forEach((sticker) => {
       initialState[sticker.id] = 'falta'
     })
+
+    if (typeof window === 'undefined') {
+      return initialState
+    }
+
+    try {
+      const saved = localStorage.getItem('stickerStatus')
+      if (!saved) {
+        return initialState
+      }
+
+      const parsed = JSON.parse(saved)
+      sampleStickers.forEach((sticker) => {
+        if (parsed[sticker.id]) {
+          initialState[sticker.id] = parsed[sticker.id]
+        }
+      })
+    } catch (error) {
+      console.warn('No se pudo cargar el estado de localStorage:', error)
+    }
+
     return initialState
   })
+
+  // Guardar estado en localStorage cuando cambia
+  useEffect(() => {
+    localStorage.setItem('stickerStatus', JSON.stringify(stickerStatus))
+  }, [stickerStatus])
 
   // Estados para filtros
   const [searchTerm, setSearchTerm] = useState('')
@@ -32,6 +59,13 @@ function App() {
       }
     })
   }
+
+  // Estadísticas del álbum
+  const totalStickers = sampleStickers.length
+  const haveCount = sampleStickers.filter((sticker) => stickerStatus[sticker.id] === 'tengo').length
+  const repeatedCount = sampleStickers.filter((sticker) => stickerStatus[sticker.id] === 'repetida').length
+  const missingCount = sampleStickers.filter((sticker) => stickerStatus[sticker.id] === 'falta').length
+  const completionPercent = totalStickers ? Math.round((haveCount / totalStickers) * 100) : 0
 
   // Filtrar figuritas por búsqueda y estado
   const filteredStickers = sampleStickers.filter((sticker) => {
@@ -50,6 +84,14 @@ function App() {
   return (
     <main>
       <h1>Álbum Mundial 2026</h1>
+
+      <AlbumSummary
+        total={totalStickers}
+        haveCount={haveCount}
+        repeatedCount={repeatedCount}
+        missingCount={missingCount}
+        completionPercent={completionPercent}
+      />
 
       {/* Barra de búsqueda */}
       <div style={{ marginBottom: '1.5rem', padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '8px' }}>

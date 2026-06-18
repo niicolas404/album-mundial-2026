@@ -50,7 +50,15 @@ utilidad: se logra una correcta interacción de usuario según lo especificado.
 
 
 === Etapa 5 ===
-prompt:
-resultado:
-utilidad:
+prompt 1:Agrega un panel de estadisticas y persistir el estado en localStorage.
+
+crea un componente llamado "AlbumSummary.jsx que muestre el total de figuritas en el álbum, cuántas tiene el usuario(tengo), cuántyas están repetidas, cuántas faltan y el porcentaje de completitud del albúm.
+
+es necesario que uses "useEffect" parea guardar el estado de la colección en localStorage cada vez que cambie. También usa "useEffect" para recuperar el estado guardado de localStorage al cargar la app. Para finalizar, revisa que, al recargar la p´´agina, el estado se mantenga.
+
+prompt 2:okay, solo un detalle con el resultado. Cuando recargo la página, el estado de las tarjetas vuelve a por defecto, es decir el cambio no se guarda como había pedido. Debes arreglar aquel error para que, por más que yo cargue la página, no se borre el registro previo.
+
+
+resultado:Se añadió un tablero que marca el estado de las figuritas que tiene el usuario junto a una barra que se completa a medida que más figuras se adquieran (tengo). Solo fue necesario hacer una corrección con un segundo prompt para que la IA pueda hacer que los datos no se borren cuando la pagina se recarga. 
+utilidad: Fue eficiente en las tareas en su conjunto, ya que si solo me quedase con el prompt 1, la terea no se habría completado.
 
