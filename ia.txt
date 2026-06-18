@@ -34,9 +34,19 @@ utilidad: ha servido para comenzar a crear la interacción de usuario
 
 
 === Etapa 4 ===
-prompt:
-resultado:
-utilidad:
+prompt 1:vamos a aplicar algunso filtros de búsqueda para el navegador.
+
+quiero que exista un campo de búsqueda de texto con el "useState" y que filtre las figuritas por un nombre y número especifico.
+también agrega los botones o un selector para filtra por estado ya sea con "todas", "tengo", "repetidas" y "faltan"
+Se debe poder aplicar ambos filtros spbre el array antes dde renderizar las tarjetas
+POr últimop, se deben mostrar el total de figuritas visibles según el filtro activo.
+
+prompt 2: Vamos a hacer unos cambios. para empezar, el filtro "tengo" funciona si cambio el estado, pero los demás filtros "repetidas" y faltan", no muestran nada a pesar de estar marcadas con dicho estado. Eso no debe pasar.
+
+segundo, haz que las letras dentro de las tarjetas sean oscuros para que resalten y no se mezclen con el color de fondo.
+
+resultado:En primera instancia, la ia pudo generar un campo de busqueda por nombre, pero al momento de filtrar según el estado, solo "tengo" servía, por o que me dispuse a generar un segundo prompt para corregir el error y resaltar las letras de fondo en las cards para que s enoten con mayor legibilidad
+utilidad: se logra una correcta interacción de usuario según lo especificado.
 
 
 === Etapa 5 ===
